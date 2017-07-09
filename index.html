@@ -1,0 +1,66 @@
+<!Doctype html>
+  <head>
+
+  </head>
+  <body>
+    <h1>设计模式</h1>
+    <hr />
+    <h2>工厂模式</h2>
+    <h3>通过类实例化对象创建</h3>
+    <h4>alert</h4>
+    <button class="showButtonAlert">显示</button>
+    <button class="hideButtonAlert">隐藏</button>
+    <h4>confirm</h4>
+    <button class="showButtonConfirm">显示</button>
+    <button class="hideButtonConfirm">隐藏</button>
+    <h4>prompt</h4>
+    <button class="showButtonPrompt">显示</button>
+    <button class="hideButtonPrompt">隐藏</button>
+    <h3>通过创建一个新的对象然后包装增强其属性和功能来实现</h3>
+    <h4>alert</h4>
+    <button class="showButtonAlert_2">显示</button>
+    <button class="hideButtonAlert_2">隐藏</button>
+    <h4>confirm</h4>
+    <button class="showButtonConfirm_2">显示</button>
+    <button class="hideButtonConfirm_2">隐藏</button>
+    <h4>prompt</h4>
+    <button class="showButtonPrompt_2">显示</button>
+    <button class="hideButtonPrompt_2">隐藏</button>
+    <div>
+
+    </div>
+    <script src="./simple-factory.js"></script>
+    <script>
+      window.onload = function() {
+        var popAlert = new PopFactory('alert', '用户名不能多于16个字母或数字');
+        var popAlert_2 = new createPop('alert', '用户名不能多于16个字母或数字');
+        var popConfirm = new PopFactory('confirm', '用户名不能多于16个字母或数字');
+        var popPrompt = new PopFactory('prompt', '欢迎回来，请输入您今天的心情吧');
+        document.querySelector('.showButtonAlert').onclick = function () {
+          popAlert.show();
+        }
+        document.querySelector('.showButtonAlert_2').onclick = function () {
+          popAlert_2.show();
+        }
+        document.querySelector('.hideButtonAlert').onclick = function () {
+          popAlert.hide();
+        }
+        document.querySelector('.hideButtonAlert_2').onclick = function () {
+          popAlert_2.hide();
+        }
+        document.querySelector('.showButtonConfirm').onclick = function () {
+          popConfirm.show();
+        }
+        document.querySelector('.hideButtonConfirm').onclick = function () {
+          popConfirm.hide();
+        }
+        document.querySelector('.showButtonPrompt').onclick = function () {
+          popPrompt.show();
+        }
+        document.querySelector('.hideButtonPrompt').onclick = function () {
+          popPrompt.hide();
+        }
+      }
+    </script>
+  </body>
+</html>
