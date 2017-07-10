@@ -35,7 +35,9 @@
         var popAlert = new PopFactory('alert', '用户名不能多于16个字母或数字');
         var popAlert_2 = new createPop('alert', '用户名不能多于16个字母或数字');
         var popConfirm = new PopFactory('confirm', '用户名不能多于16个字母或数字');
+        var popConfirm_2 = new createPop('confirm', '用户名不能多于16个字母或数字');
         var popPrompt = new PopFactory('prompt', '欢迎回来，请输入您今天的心情吧');
+        var popPrompt_2 = new createPop('prompt', '欢迎回来，请输入您今天的心情吧');
         document.querySelector('.showButtonAlert').onclick = function () {
           popAlert.show();
         }
@@ -51,14 +53,26 @@
         document.querySelector('.showButtonConfirm').onclick = function () {
           popConfirm.show();
         }
+        document.querySelector('.showButtonConfirm_2').onclick = function () {
+          popConfirm_2.show();
+        }
         document.querySelector('.hideButtonConfirm').onclick = function () {
           popConfirm.hide();
+        }
+        document.querySelector('.hideButtonConfirm_2').onclick = function () {
+          popConfirm_2.hide();
         }
         document.querySelector('.showButtonPrompt').onclick = function () {
           popPrompt.show();
         }
+        document.querySelector('.showButtonPrompt_2').onclick = function () {
+          popPrompt_2.show();
+        }
         document.querySelector('.hideButtonPrompt').onclick = function () {
           popPrompt.hide();
+        }
+        document.querySelector('.hideButtonPrompt_2').onclick = function () {
+          popPrompt_2.hide();
         }
       }
     </script>

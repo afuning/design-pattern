@@ -101,6 +101,17 @@ LoginPrompt.prototype.hide = function () {
   }
 }
 
+var PopFactory = function (name, text) {
+  switch (name) {
+    case 'alert':
+      return new LoginAlert(text);
+    case 'confirm':
+      return new LoginConfirm(text);
+    case "prompt":
+      return new LoginPrompt(text);
+  }
+}
+// 通过创建一个新的对象然后包装增强其属性和功能来实现
 function createPop (type, text) {
   var o = new Object();
   var id = 'popDialog_' + type + '_2';
@@ -129,8 +140,8 @@ function createPop (type, text) {
     bodyNode.appendChild(popNode);
   }
   if (type == 'confirm') {
-    var bottonNode = document.createElement('button');
-    bottonNode.innerText = '注册';
+    var buttonNode = document.createElement('button');
+    buttonNode.innerText = '注册';
     popNode.appendChild(buttonNode);
     bodyNode.appendChild(popNode);
   }
@@ -146,15 +157,4 @@ function createPop (type, text) {
     bodyNode.appendChild(popNode);
   }
   return o;
-}
-
-var PopFactory = function (name, text) {
-  switch (name) {
-    case 'alert':
-      return new LoginAlert(text);
-    case 'confirm':
-      return new LoginConfirm(text);
-    case "prompt":
-      return new LoginPrompt(text);
-  }
 }
